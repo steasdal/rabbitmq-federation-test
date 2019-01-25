@@ -463,7 +463,7 @@ EOF
 
 echo "dumping definitions to the ./definitions drectory..."
 
-curl -s -u ${admin_name}:${admin_pass} http://localhost:${left_server_port}/api/definitions > ./definitions/rabbit.left.json
+curl -s -u ${admin_name}:${admin_pass} http://localhost:${left_server_port}/api/definitions  > ./definitions/rabbit.left.json
 curl -s -u ${admin_name}:${admin_pass} http://localhost:${right_server_port}/api/definitions > ./definitions/rabbit.right.json
 
 ####################################################
@@ -480,7 +480,7 @@ echo
 echo "##########################################################################"
 echo "#                                                                        #"
 echo "#   Configuration Complete!  The RabbitMQ containers are still running   #"
-echo "#   and can be accessed at the following URLs:                           #"
+echo "#   and can be accessed at the following URLs using admin/admin:         #"
 echo "#                                                                        #"
 echo "#       http://localhost:${left_server_port}   (the left broker)                        #"
 echo "#       http://localhost:${right_server_port}   (the right broker)                       #"
@@ -502,4 +502,23 @@ echo "shutting down and removing the temporary RabbitMQ containers..."
 
 docker-compose down --rmi all
 
+echo
+
+read -p "Press ENTER to delete the files created by this script or ctrl+c to exit..."
+
+echo
+
+echo "deleting the files and directories created by this script..."
+
+rm -f rabbitmq.conf
+rm -f Dockerfile-Left
+rm -f Dockerfile-Right
+rm -f docker-compose.yml
+rm -rf testca
+rm -rf definitions
+
+echo
+
 echo "*** DONE ***"
+
+echo
