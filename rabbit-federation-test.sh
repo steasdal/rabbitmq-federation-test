@@ -11,10 +11,10 @@
 
 echo "Preparing all the things..."
 
-left_server_hostname=rabbit.left          # Appriss
+left_server_hostname=rabbit.left
 left_server_port=8081
 
-right_server_hostname=rabbit.right        # AWS
+right_server_hostname=rabbit.right
 right_server_port=8082
 
 # admin username and password for both left and right servers
