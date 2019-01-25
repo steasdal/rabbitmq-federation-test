@@ -1,7 +1,7 @@
 # RabbitMQ Federation Test Script
 
 We need to test federation over TLS between two RabbitMQ servers.  We'll create two RabbitMQ Docker containers which
-we'll arbitrarily call *rabbit-left* and *rabbit-right*, create some exchanges and queues on each server, and then
+we'll arbitrarily call **rabbit-left** and **rabbit-right**, create some exchanges and queues on each server, and then
 federate the two servers with upstream links and policies.  This script, when run, will do the following:
 
    * Create a few directories and files
