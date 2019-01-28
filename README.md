@@ -1,8 +1,18 @@
 # RabbitMQ Federation Test Script
 
-We need to test federation over TLS between two RabbitMQ servers.  We'll create two RabbitMQ Docker containers which
-we'll arbitrarily call **rabbit-left** and **rabbit-right**, create some exchanges and queues on each server, and then
-federate the two servers with upstream links and policies.  This script, when run, will do the following:
+We need to test federation between two RabbitMQ servers.  We'll create two RabbitMQ Docker containers which
+we'll arbitrarily call **rabbit-left** and **rabbit-right**, create some exchanges and queues on each server, 
+and then federate the two servers with upstream links and policies.  We've got one script that uses good old
+**amqp** links and one that uses **ampqs** links (over TLS).
+
+The non-TLS script, when run, will do the following:
+
+   * Create a few directories and files
+   * Build and start both server containers with Docker Compose
+   * Use the *Management HTTP API* to create users, vhosts, exchanges, queues, upstream links and policies on each server.
+   * Dump the configuration from each server to files in the ./definitions directory.
+
+Ths TLS script, when run, will do the following:
 
    * Create a few directories and files
    * Create a Certificate Authority
@@ -21,7 +31,7 @@ You'll need to following tools to run this script:
 ## Result
 Once the servers are running, configured and federated, the logs fill up with messages that look like the following.
 Everything appears to work; messages seem to flow properly between servers.  These log messages popping up every
-thirty seconds, however, are a bit concerning.
+thirty seconds, however, are a bit concerning.  What's up with these?
 
 ```bash
 rabbit-right    | 2019-01-25 20:09:28.010 [info] <0.962.0> accepting AMQP connection <0.962.0> (192.168.160.2:51781 -> 192.168.160.3:5671)

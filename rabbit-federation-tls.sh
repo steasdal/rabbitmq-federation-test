@@ -164,7 +164,6 @@ COPY testca/right-client/client_certificate.pem /etc/ssl/certs/client/
 COPY testca/right-client/client_key.pem /etc/ssl/certs/client/
 
 COPY rabbitmq.conf /etc/rabbitmq/
-
 EOT
 
 ########################################################################################################################
