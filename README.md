@@ -55,3 +55,9 @@ rabbit-left     | 2019-01-25 20:10:28.124 [info] <0.1049.0> connection <0.1049.0
 rabbit-right    | 2019-01-25 20:10:28.126 [info] <0.1048.0> closing AMQP connection <0.1048.0> (192.168.160.2:57897 -> 192.168.160.3:5671, vhost: 'rabbit.federation.test.vhost', user: 'admin')
 rabbit-left     | 2019-01-25 20:10:28.140 [info] <0.1049.0> closing AMQP connection <0.1049.0> (192.168.160.3:58987 -> 192.168.160.2:5671, vhost: 'rabbit.federation.test.vhost', user: 'admin')
 ```
+
+# Response
+
+Aaaaaand here's the response that I received via the [RabbitMQ Mailing List](https://groups.google.com/forum/#!forum/rabbitmq-users):
+
+https://groups.google.com/forum/#!topic/rabbitmq-users/Zu-1bQ79Z6Y
